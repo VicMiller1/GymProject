@@ -19,7 +19,13 @@ def adddetails():
   members.append([firstname, lastname, MembershipType, duration])
 
 def savedetails():
-  with open (
+  with open ('MembersDatabase.txt', 'w',newline = '') as file:
+    for member in members:
+      file.write(" ".join(map(str, member)) + "/n")
+
+adddetails()
+savedetails()
+    
   
 
 
