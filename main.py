@@ -22,6 +22,8 @@ def savedetails():
   with open ('MembersDatabase.txt', 'w',newline = '') as file:
     for member in members:
       file.write(" ".join(map(str, member)) + "/n")
+    for membershiptype in MembershipType:
+      file.write(" ".join(map(str, membershiptype)) + "/n")
 
 adddetails()
 savedetails()
