@@ -70,7 +70,7 @@ def savedetails():
 
 
 print("Welcome to the GYM membership system")
-choice = input("Would you like to 1.log in or 2.sign up?")
+choice = int(input("Would you like to 1.log in or 2.sign up?"))
 if choice == 1:
     login()
 elif choice == 2:
