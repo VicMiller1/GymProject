@@ -4,17 +4,17 @@ members = []
 
 
 def login():
-    idNum = input("Please enter your member ID number")
+    idNum = int(input("Please enter your member ID number"))
     file = open("membersDatabase.txt","r")
     members = file.readlines() #["jane.smith.standard.25","robert.jones.premium.36",...]
-    user = members[int(idNum)].split(".") #["jane","smith","standard","25"]
+    user = members[idNum-1].split(".") #["jane","smith","standard","25"]
     print(f"Hello {user[0]} {user[1]}. Your membership type is {user[2]} for {user[3]} months")
     file.close()
 
 
 def adddetails(): # add a new user
 
-    firstname = str(input("enter your fist name:")) 
+    firstname = str(input("enter your first name:")) 
 
     lastname = str(input("Enter your last name: "))
 
@@ -64,8 +64,8 @@ def savedetails():
    # open the file in append mode
    file = open("membersDatabase.txt","a")
    # add the member variable to the file
-   file.write(member+"\n")
-
+   file.write("\n"+member)
+   # close the file
    file.close()
 
 
